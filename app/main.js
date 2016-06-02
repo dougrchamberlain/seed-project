@@ -11,7 +11,7 @@ require.config({
 });
 
 
-require(["module1/module1Module"],
+require(["module1/module"],
     function() {
         angular.bootstrap(document, ["module1"]);
     }
