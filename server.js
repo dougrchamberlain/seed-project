@@ -18,7 +18,7 @@ mongodb.MongoClient.connect(process.env.MONGODB_URI, function (err, database){
     }
 });
 
-var port = process.env.port || 8080;
+var port = process.env.PORT;
 
 
 function handleError(res, reason, message, code){
