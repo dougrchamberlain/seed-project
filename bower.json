@@ -1,0 +1,20 @@
+{
+  "name": "seed-project",
+  "version": "0.0.0",
+  "homepage": "https://github.com/dougrchamberlain/seed-project",
+  "authors": [
+    "dougrchamberlain <dougrchamberlain@gmail.com>"
+  ],
+  "description": "seed project",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
