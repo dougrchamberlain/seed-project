@@ -1,0 +1,23 @@
+{
+  "name": "seed-project",
+  "version": "1.0.0",
+  "description": "This is a seed project to use whenever creating a new angular site.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dougrchamberlain/seed-project.git"
+  },
+  "keywords": [
+    "seed",
+    "angular"
+  ],
+  "author": "dougrchamberlain@gmail.com",git
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dougrchamberlain/seed-project/issues"
+  },
+  "homepage": "https://github.com/dougrchamberlain/seed-project"
+}
