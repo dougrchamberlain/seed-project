@@ -10,7 +10,9 @@ require.config({
     }
 });
 
-require(["test"],function(myTest){
-    myTest();
-    console.log(myTest());
-});
+
+require(["module1/module1Module"],
+    function() {
+        angular.bootstrap(document, ["module1"]);
+    }
+);
