@@ -15,7 +15,6 @@ app.use("/api", require(__dirname + "/routes/api"));
 
 
 mongoose = restful.mongoose;
-var CONTACTS_COLLECTION = "contacts";
 
 mongoose.connect(process.env.MONGODB_URI, function (err, database){
     if(err){
