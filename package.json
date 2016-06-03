@@ -28,6 +28,8 @@
     "bower": "^1.7.9",
     "express": "^4.13.4",
     "mongodb": "^2.1.21",
+    "mongoose": "^4.4.19",
+    "node-restful": "^0.2.5",
     "require": "^2.4.20"
   }
 }
