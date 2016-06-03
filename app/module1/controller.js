@@ -2,12 +2,13 @@
  * Created by dchamberlain on 6/2/2016.
  */
 define([],function(){
-    function module1Controller ($scope){
+    function module1Controller (){
         console.log("this controller loaded");
-        $scope.testValue = "hello world";
+        var vm = this;
+        vm.testValue = "hello world";
     };
 
-    module1Controller.$inject  = ["$scope"];
+
 
     return module1Controller;
 
