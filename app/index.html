@@ -4,13 +4,25 @@
     <meta charset="UTF-8">
     <title>Is this working</title>
 </head>
+<link rel="stylesheet"  href="scripts/bootstrap/dist/css/bootstrap.css" type="text/css"/>
 <body>
 
-<ui-view></ui-view>
+<div class="container-fluid">
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <button class="btn btn-default"> hello</button>
+                <ui-view></ui-view>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 <script src="scripts/angular/angular.js"></script>
 <script src="scripts/angular-resource/angular-resource.js"></script>
 <script src="scripts/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="scripts/angular-bootstrap/ui-bootstrap.js"></script>
+<script src="scripts/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 <script data-main="main" src="scripts/requirejs/require.js"></script>
 </html>

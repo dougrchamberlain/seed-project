@@ -1,9 +1,10 @@
 define([],function(module1Controller){
-    function config($stateProvider){
+    function config($stateProvider,$urlRouterProvider){
+        $urlRouterProvider.otherwise("/");
         $stateProvider
             .state("home",{
                url: "/",
-                template: "<div>This is a stupid page {{vm.testValue}}</div>",
+                templateUrl:"../module1/templates/module1.html",
                 controller: "module1Controller",
                 controllerAs: "vm",
                 bindToController: true
@@ -11,7 +12,7 @@ define([],function(module1Controller){
         console.log("config is loaded");
     }
 
-    config.$inject=["$stateProvider"];
+    config.$inject=["$stateProvider","$urlRouterProvider"];
 
     return config;
 });
