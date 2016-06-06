@@ -15,14 +15,20 @@ define([],function(){
             });
         }
 
-        vm.save = function(){
-            if(vm.todo._id){
-                todoService.update(vm.todo,loadResults);
+        vm.save = function(todo){
+            if(todo._id){
+                todoService.update(todo,loadResults);
             }
             else {
                 var newTodo = new todoService(vm.todo);
                 newTodo.$save(newTodo, loadResults);
             }
+            vm.todo = {};
+        }
+
+        vm.remove = function(todo){
+            todo.$remove(todo, loadResults);
+            vm.todo = {};
         }
 
         loadResults();

@@ -6,20 +6,51 @@
 </style>
 
 
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <div class="ng-form" >
-                <div class="form-group">
-                    <input class="form-control" type="text" ng-model="vm.todo.description">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="checkbox" ng-model="vm.todo.done">
-                </div>
+<div class="">
+    <div class="row col-xs-8">
+        <div class="col-xs-12">
+            <div class="row">
+
+
+                <ul class="list-group" ng-show="vm.todos.$resolved == true">
+                    <li class="list-group-item">
+                        <div  class="form-inline">
+                            <div class="checkbox">
+                                <label for="">
+                                    <input class="form-control" type="checkbox" ng-model="vm.todo.done">
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" ng-model="vm.todo.description">
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-default" ng-click="vm.save(vm.todo)"><i class="fa fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item"  ng-repeat="todo in vm.todos">
+                        <div  class="form-inline">
+                            <div class="checkbox">
+                                <label for="">
+                                    <input class="form-control" type="checkbox" ng-model="todo.done">
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" ng-model="todo.description">
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-default" ng-click="vm.save(todo)"><i class="fa fa-save"></i></button>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-warning" ng-disabled="vm.todos.$resolved == false" ng-click="vm.remove(todo)"><i class="fa fa-remove"></i></button>
+                            </div>
+                        </div>
+
+                    </li>
+                </ul>
             </div>
-           <button class="btn btn-default" ng-click="vm.save()">Save</button>
+
         </div>
     </div>
-
-<ul>
-    <li ng-click="vm.todo = todo" ng-class="{'todo-completed': todo.done}" ng-repeat="todo in vm.todos">{{todo.description}}</li>
-</ul>
+    <div class="row col-xs-4"></div>
+</div>

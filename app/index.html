@@ -3,21 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Is this working</title>
+
+    <link rel="stylesheet"  href="../bower_components/bootstrap/dist/css/bootstrap.css" type="text/css"/>
+
 </head>
-<link rel="stylesheet"  href="scripts/bootstrap/dist/css/bootstrap.css" type="text/css"/>
+
 <body>
 
-<div class="container-fluid">
+<div class="container">
     <div class="row">
-                <ui-view></ui-view>
-            </div>
+       <div class="panel panel-default">
+           <div class="panel-heading">
+               Add Todos
+           </div>
+           <div class="panel-body">
+               <ui-view class="col-xs-12"></ui-view>
+           </div>
+       </div>
+    </div>
 </div>
 
 </body>
+<script src="https://use.fontawesome.com/e92f8c5123.js"></script>
 <script src="scripts/angular/angular.js"></script>
 <script src="scripts/angular-resource/angular-resource.js"></script>
 <script src="scripts/angular-ui-router/release/angular-ui-router.js"></script>
 <script src="scripts/angular-bootstrap/ui-bootstrap.js"></script>
 <script src="scripts/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
 <script data-main="main" src="scripts/requirejs/require.js"></script>
+
 </html>
