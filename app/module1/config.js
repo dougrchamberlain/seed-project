@@ -1,11 +1,11 @@
-define([],function(module1Controller){
+define([],function(todoItemController){
     function config($stateProvider,$urlRouterProvider){
         $urlRouterProvider.otherwise("/");
         $stateProvider
             .state("home",{
                url: "/",
                 templateUrl:"../module1/templates/module1.html",
-                controller: "module1Controller",
+                controller: "todoItemController",
                 controllerAs: "vm",
                 bindToController: true
             });

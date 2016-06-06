@@ -5,9 +5,9 @@ var express = require("express");
 var path = require("path");
 var router = express.Router();
 console.log(__dirname);
-var simpleModel = require("../models/simple");
+var todoItemModel = require("../models/todoItem");
 
-simpleModel.methods(["get", "put", "post", "delete"]);
-simpleModel.register(router, "/simple");
+todoItemModel.methods(["get", "put", "post", "delete"]);
+todoItemModel.register(router, "/todos");
 
 module.exports = router;

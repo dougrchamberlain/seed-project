@@ -1,3 +1,25 @@
+<style>
+   .todo-completed{
+       text-decoration: line-through;
+   }
+
+</style>
+
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="ng-form" >
+                <div class="form-group">
+                    <input class="form-control" type="text" ng-model="vm.todo.description">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="checkbox" ng-model="vm.todo.done">
+                </div>
+            </div>
+           <button class="btn btn-default" ng-click="vm.save()">Save</button>
+        </div>
+    </div>
+
 <ul>
-    <li ng-repeat="todo in vm.todos">{{todo.name}}</li>
+    <li ng-click="vm.todo = todo" ng-class="{'todo-completed': todo.done}" ng-repeat="todo in vm.todos">{{todo.description}}</li>
 </ul>
