@@ -28,21 +28,26 @@
                             </div>
                         </div>
                     </li>
-                    <li class="list-group-item"  ng-repeat="todo in vm.todos">
+                    <li class="list-group-item"  ng-repeat="todo in vm.todos" ng-if="vm.todos.$resolved == true">
                         <div  class="form-inline">
                             <div class="checkbox">
                                 <label for="">
-                                    <input class="form-control" type="checkbox" ng-model="todo.done">
+                                    <input ng-click="vm.save(todo)" class="form-control" type="checkbox" ng-model="todo.done">
                                 </label>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" type="text" ng-model="todo.description">
+                                <label ng-if="!todo.editMode" for="" ng-class="{'todo-completed' : todo.done}" >{{todo.description}}</label>
+                                <input ng-if="todo.editMode" class="form-control" type="text"  ng-model="todo.description">
+                            </div>
+                            <div ng-if="!todo.editMode" class="form-group">
+                                <button  class="btn btn-default"  ng-click="todo.editMode = true; vm.oldValue = todo.description" ><i class="fa fa-pencil"></i></button>
+                            </div>
+                            <div class="form-group" ng-if="todo.editMode == true">
+                                <button  class="btn btn-default" ng-click="vm.save(todo)"><i class="fa fa-check"></i></button>
+                                <button class="btn btn-default" ng-click="todo.editMode = false; todo.description = vm.oldValue"><i class="fa fa-times"></i></button>
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-default" ng-click="vm.save(todo)"><i class="fa fa-save"></i></button>
-                            </div>
-                            <div class="form-group">
-                                <button class="btn btn-warning" ng-disabled="vm.todos.$resolved == false" ng-click="vm.remove(todo)"><i class="fa fa-remove"></i></button>
+                                <button class="btn btn-warning" ng-disabled="vm.todos.$resolved == false" ng-click="vm.remove(todo)"><i class="fa fa-trash"></i></button>
                             </div>
                         </div>
 
