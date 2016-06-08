@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Is this working</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Todos</title>
 
     <link rel="stylesheet"  href="../bower_components/bootstrap/dist/css/bootstrap.css" type="text/css"/>
     <link rel="stylesheet" href="fa/css/font-awesome.min.css">
@@ -13,12 +14,14 @@
 
 <div class="container">
     <div class="row">
-       <div class="panel panel-default">
-           <div class="panel-heading">
-               Add Todos
-           </div>
-           <div class="panel-body">
-               <ui-view class="col-xs-12"></ui-view>
+       <div class="col-xs-12">
+           <div class="panel panel-default">
+               <div class="panel-heading">
+                   Add Todos
+               </div>
+               <div class="panel-body">
+                   <ui-view class="row"></ui-view>
+               </div>
            </div>
        </div>
     </div>

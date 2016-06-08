@@ -4,49 +4,43 @@
    }
 
 </style>
-
-
-<div class="">
-    <div class="row col-xs-8">
-        <div class="col-xs-12">
-            <div class="row">
-
-
-                <ul class="list-group" ng-show="vm.todos.$resolved == true">
+    <div class="row">
+        <div class="col-md-12">
+                <ul ng-show="vm.todos.$resolved == true">
                     <li class="list-group-item">
-                        <div  class="form-inline">
-                            <div class="checkbox">
-                                <label for="">
-                                    <input class="form-control" type="checkbox" ng-model="vm.todo.done">
-                                </label>
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" type="text" ng-model="vm.todo.description">
-                            </div>
-                            <div class="form-group">
-                                <button class="btn btn-default" ng-click="vm.save(vm.todo)"><i class="fa fa-plus"></i></button>
-                            </div>
-                        </div>
+                               <div class="form-inline">
+                                   <div class="form-group checkbox col-md-4">
+                                       <label for="">
+                                           <input class="form-control" type="checkbox" ng-model="vm.todo.done">
+                                       </label>
+                                   </div>
+                                   <div class="form-group col-md-4">
+                                       <input class="form-control" type="text" ng-model="vm.todo.description">
+                                   </div>
+                                   <div class="form-group col-md-4">
+                                       <button class="btn btn-default" ng-click="vm.save(vm.todo)"><i class="fa fa-plus"></i></button>
+                                   </div>
+                               </div>
                     </li>
                     <li class="list-group-item"  ng-repeat="todo in vm.todos" ng-if="vm.todos.$resolved == true">
                         <div  class="form-inline">
-                            <div class="checkbox">
+                            <div class="form-group col-md-1 checkbox">
                                 <label for="">
                                     <input ng-click="vm.save(todo)" class="form-control" type="checkbox" ng-model="todo.done">
                                 </label>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group col-md-7">
                                 <label ng-if="!todo.editMode" for="" ng-class="{'todo-completed' : todo.done}" >{{todo.description}}</label>
                                 <input ng-if="todo.editMode" class="form-control" type="text"  ng-model="todo.description">
                             </div>
-                            <div ng-if="!todo.editMode" class="form-group">
+                            <div ng-if="!todo.editMode" class="form-group col-md-3">
                                 <button  class="btn btn-default"  ng-click="todo.editMode = true; vm.oldValue = todo.description" ><i class="fa fa-pencil"></i></button>
                             </div>
-                            <div class="form-group" ng-if="todo.editMode == true">
+                            <div class="form-group col-md-3" ng-if="todo.editMode == true">
                                 <button  class="btn btn-default" ng-click="vm.save(todo)"><i class="fa fa-check"></i></button>
                                 <button class="btn btn-default" ng-click="todo.editMode = false; todo.description = vm.oldValue"><i class="fa fa-times"></i></button>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group col-md-1">
                                 <button class="btn btn-warning" ng-disabled="vm.todos.$resolved == false" ng-click="vm.remove(todo)"><i class="fa fa-trash"></i></button>
                             </div>
                         </div>
@@ -54,8 +48,4 @@
                     </li>
                 </ul>
             </div>
-
-        </div>
     </div>
-    <div class="row col-xs-4"></div>
-</div>
