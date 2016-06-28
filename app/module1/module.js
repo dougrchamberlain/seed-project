@@ -8,6 +8,6 @@ define(
     function(config,todoItemController,todoService){
         var app = angular.module("module1", ["ngResource","ui.router"]);
         app.config(config);
-        app.controller("todoItemController", todoItemController);
+        app.controller("module1Controller", todoItemController);
         app.factory("todoService",todoService);
     });

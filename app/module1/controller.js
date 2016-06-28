@@ -2,12 +2,10 @@
  * Created by dchamberlain on 6/2/2016.
  */
 define([],function(){
-    function todoItemController (todoService){
+    function todoItemController (todoService) {
 
         var vm = this;
-
-
-
+        console.log("loaded the main page controller");
         function loadResults(){
             todoService.query(function(results){
                 vm.todos = results;
@@ -15,27 +13,17 @@ define([],function(){
             });
         }
 
-        vm.save = function(todo){
-            if(todo._id){
-                todoService.update(todo,loadResults);
-            }
-            else {
+        vm.add = function(){ //this is a sign my scope is at the wrong level.
                 var newTodo = new todoService(vm.todo);
                 newTodo.$save(newTodo, loadResults);
-            }
-            vm.todo = {};
-        }
-
-        vm.remove = function(todo){
-            todo.$remove(todo, loadResults);
             vm.todo = {};
         }
 
         loadResults();
-    };
+
+    }
 
     todoItemController.$inject = ["todoService"];
-
 
     return todoItemController;
 

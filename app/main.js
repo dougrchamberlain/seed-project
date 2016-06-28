@@ -10,9 +10,9 @@ require.config({
     }
 });
 
-
-require(["module1/module"],
+//using require to eliminate so many js files having to be loaded at in the index.html 
+require(["module1/module","todo-directive/module"],
     function() {
-        angular.bootstrap(document, ["module1"]);
+        angular.bootstrap(document, ["module1","Components.todos"]);
     }
 );
